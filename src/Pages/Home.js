@@ -1,12 +1,16 @@
-import React from 'react'
-import Navigation from '../Components/Navigaion'
+import React from "react";
+import Banner from "../Components/Banner";
+import Navigation from "../Components/Navigaion";
 
 const Home = () => {
   return (
-    <div>
-      <Navigation />
-    </div>
-  )
-}
+    <>
+      <header>
+        <Navigation />
+        <Banner />
+      </header>
+    </>
+  );
+};
 
-export default Home
+export default Home;
