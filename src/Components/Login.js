@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Navigaion from './Navigaion';
 
 function Login() {
   const {
@@ -14,6 +15,8 @@ function Login() {
   };
 
   return (
+    <>
+   <Navigaion />
     <div className='max-w-md mx-auto bg-[#f5f5f5] p-8 rounded-md shadow-md mt-28'>
       <h2 className='text-2xl font-bold mb-4'>Log in</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -75,6 +78,7 @@ function Login() {
         </div>
       </form>
     </div>
+    </>
   );
 }
 
