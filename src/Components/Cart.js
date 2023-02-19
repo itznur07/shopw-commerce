@@ -1,11 +1,11 @@
 import React from "react";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
-import { useSelector } from "react-redux";
-// import {
-//     decreaseQty,
-//     increaseQty,
-//     removeFromCart
-// } from "../store/reducers/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decreaseQty,
+  increaseQty,
+  removeFromCart
+} from "../store/reducers/productsSlice";
 import Navigaion from "./Navigaion";
 
 const Cart = () => {
@@ -33,21 +33,22 @@ const Cart = () => {
 // card Items
 
 const CardItem = ({ item }) => {
-//   const dispatch = useDispatch();
 
-//   const handleIncrese = (itemId) => {
-//     dispatch(increaseQty(itemId));
-//   };
+  const dispatch = useDispatch();
 
-//   const handleDecrese = (itemId, qty) => {
-//     if (qty > 1) {
-//       dispatch(decreaseQty(itemId));
-//     }
-//   };
+  const handleIncrese = (itemId) => {
+    dispatch(increaseQty(itemId));
+  };
 
-//   const handleRemove = (itemId) => {
-//     dispatch(removeFromCart(itemId));
-//   };
+  const handleDecrese = (itemId, qty) => {
+    if (qty > 1) {
+      dispatch(decreaseQty(itemId));
+    }
+  };
+
+  const handleRemove = (itemId) => {
+    dispatch(removeFromCart(itemId));
+  };
 
   return (
     <div className='md:w-full'>
@@ -63,14 +64,14 @@ const CardItem = ({ item }) => {
         <p className='text-gray-600 text-md font-medium mt-2'>${item.price}</p>
         <div className='flex items-center mt-4'>
           <button
-            // onClick={() => handleDecrese(item.id, item.qty)}
+            onClick={() => handleDecrese(item.id, item.qty)}
             className='bg-gray-200 px-3 py-2 rounded-full hover:bg-gray-400'
           >
             <FaMinus />
           </button>
           <p className='px-2'>{item.qty}</p>
           <button
-            // onClick={() => handleIncrese(item.id)}
+            onClick={() => handleIncrese(item.id)}
             className='bg-gray-200 px-3 py-2 rounded-full hover:bg-gray-400'
           >
             <FaPlus />
@@ -80,7 +81,7 @@ const CardItem = ({ item }) => {
           Total: ${item.price * item.qty}
         </p>
         <button
-        //   onClick={() => handleRemove(item.id)}
+          onClick={() => handleRemove(item.id)}
           className='mt-4 text-red-600 hover:underline'
         >
           <FaTrash />
