@@ -1,19 +1,22 @@
 import React from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { FaList, FaTh } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Navigation from "./Navigaion";
+import ProductCard from "./ProductCard";
+
 // import {
 //     selectFilteredProducts, selectPageNumber, selectSortOption, setPageNumber, setSortOption
 // } from "../store/reducers/productsSlice";
 
 const Shop = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+
   const {products} = useSelector((state) => state.products);
 //   const filteredProducts = useSelector(selectFilteredProducts);
 //   const sortOption = useSelector(selectSortOption);
 //   const pageNumber = useSelector(selectPageNumber);
-  const productsPerPage = 12;
+  // const productsPerPage = 12;
 
 //   const handleSortChange = (e) => {
 //     dispatch(setSortOption(e.target.value));
@@ -86,23 +89,7 @@ const Shop = () => {
         {/* Product Cards */}
         <div className='grid grid-cols-3 gap-4'>
           {products.map((product) => (
-            <div
-              key={product.id}
-              className='border rounded-md p-4 flex flex-col justify-between'
-            >
-              <div className='flex justify-center'>
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className='max-h-32 object-contain'
-                />
-              </div>
-              <div className='flex flex-col mt-2'>
-                <h3 className='font-medium'>{product.title}</h3>
-                <p className='text-gray-500'>{product.category}</p>
-                <p className='font-bold'>${product.price.toFixed(2)}</p>
-              </div>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
         {/* Pagination */}

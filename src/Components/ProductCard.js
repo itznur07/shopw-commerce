@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-    FaHeart,
-    FaShoppingCart,
-    FaStar,
-    FaStarHalfAlt,
-    FaTimes
+  FaHeart,
+  FaShoppingCart,
+  FaStar,
+  FaStarHalfAlt,
+  FaTimes
 } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         >
           <FaShoppingCart size={20} />
         </button>
-        <img src={product.image} alt={product.title} className='' />
+        <img src={product.image} alt={product.title} className='w-full' />
         <div className='flex justify-center'>
           <button
             onClick={() => setIsOpen(true)}
