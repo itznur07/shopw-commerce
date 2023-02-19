@@ -9,7 +9,7 @@ import {
   FaTimes
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../store/reducers/productsSlice";
+import { addToCart, addToWish } from "../store/reducers/productsSlice";
 
 const SpcialOffer = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,10 @@ const SpcialOffer = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+  };
+
+  const handleAddToWish = (product) => {
+    dispatch(addToWish(product));
   };
 
   return (
@@ -110,7 +114,7 @@ const SpcialOffer = () => {
                           ${product.discountPrice}
                         </span>
                       </div>
-                      <button className='text-gray-700 hover:text-red-500'>
+                      <button onClick={() => handleAddToWish(product)} className='text-gray-700 hover:text-red-500'>
                         <FaHeart size={20} />
                       </button>
                     </div>

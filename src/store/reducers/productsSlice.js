@@ -126,6 +126,7 @@ const productsSlice = createSlice({
       },
     ],
     cart: [],
+    wish: [],
   },
   reducers: {
     addToCart: (state, action) => {
@@ -138,6 +139,18 @@ const productsSlice = createSlice({
         state.cart.push(action.payload);
       }
     },
+
+    addToWish: (state, action) => {
+      const existingItem = state.wish.find(
+        (item) => item.id === action.payload.id
+      );
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        state.wish.push(action.payload);
+      }
+    },
+
     increaseQty: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload);
       item.qty += 1;
@@ -154,6 +167,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { addToCart, increaseQty, decreaseQty, removeFromCart } =
+export const { addToCart, increaseQty, decreaseQty, removeFromCart , addToWish} =
   productsSlice.actions;
 export default productsSlice.reducer;
