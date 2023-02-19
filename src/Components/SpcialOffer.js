@@ -8,9 +8,11 @@ import {
   FaStarHalfAlt,
   FaTimes
 } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../store/reducers/productsSlice";
 
 const SpcialOffer = () => {
+  const dispatch = useDispatch()
   const [quantity, setQuantity] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,6 +25,10 @@ const SpcialOffer = () => {
   const items = products.map((item) => {
     return item;
   });
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  };
 
   return (
     <>
@@ -57,7 +63,9 @@ const SpcialOffer = () => {
                 <button className=' hover:text-blue-500 bg-slate-200 px-2 py-2 rounded'>
                   <FaHeart size={20} />
                 </button>
-                <button className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'>
+                <button
+                  className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'
+                >
                   <FaShoppingCart size={20} className='mr-2' /> Add To Cart
                 </button>
                 <button className=' text-gray-500 hover:text-gray-600 bg-slate-200 px-2 py-2 rounded'>
@@ -69,18 +77,21 @@ const SpcialOffer = () => {
           <div className='col-span-8 border ml-3'>
             {/* 2nd section */}
             <div className='grid grid-cols-4'>
-              {products.slice(0, 8).map((index) => (
+              {products.slice(0, 8).map((product) => (
                 <div
-                  key={index}
+                  key={product}
                   className='relative border hover:shadow-lg cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-200'
                 >
                   <div className='absolute top-3 left-2  text-white bg-blue-500  px-3 '>
-                    {index.status}
+                    {product.status}
                   </div>
-                  <button className='absolute top-3 right-2 z-10  hover:text-blue-500'>
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className='hidden group-hover:block bg-white hover:bg-blue-500 p-2 hover:text-white rounded-full absolute top-3 right-2 z-10 '
+                  >
                     <FaShoppingCart size={20} />
                   </button>
-                  <img src={index.image} alt={index.title} className='' />
+                  <img src={product.image} alt={product.title} className='' />
                   <div className='flex justify-center'>
                     <button
                       onClick={() => setIsOpen(true)}
@@ -90,7 +101,7 @@ const SpcialOffer = () => {
                     </button>
                   </div>
                   <div className='bottom-0 left-0 w-full p-4'>
-                    <h3 className='text-base font-bold'>{index.title}</h3>
+                    <h3 className='text-base font-bold'>{product.title}</h3>
                     <span className='flex items-center mt-1 text-sm text-yellow-400'>
                       <FaStar /> <FaStar /> <FaStar /> <FaStar />
                       <FaStarHalfAlt />
@@ -98,10 +109,10 @@ const SpcialOffer = () => {
                     <div className='flex justify-between items-center mt-3'>
                       <div className='space-x-2'>
                         <span className='text-base text-gray-400 line-through'>
-                          ${index.price}
+                          ${product.price}
                         </span>
                         <span className='text-base font-bold text-yellow-600'>
-                          ${index.discountPrice}
+                          ${product.discountPrice}
                         </span>
                       </div>
                       <button className='text-gray-700 hover:text-red-500'>
