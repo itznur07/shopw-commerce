@@ -1,5 +1,8 @@
 import React from "react";
 import { FaShoppingCart, FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/reducers/productsSlice";
 import Navigaion from "./Navigaion";
@@ -25,7 +28,6 @@ const Wish = () => {
 // card Items
 
 const CardItem = ({ item }) => {
-    
   const dispatch = useDispatch();
 
   const handleRemove = (itemId) => {
@@ -33,8 +35,13 @@ const CardItem = ({ item }) => {
   };
 
   const handleAddToCart = (item) => {
-    dispatch(addToCart(item))
-  }
+    dispatch(addToCart(item));
+    toast.success(`${item.title} added to cart! 🛒`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+    });
+  };
 
   return (
     <div className='md:w-full'>
@@ -48,7 +55,10 @@ const CardItem = ({ item }) => {
 
         <p className='text-gray-600 text-md font-medium mt-2'>${item.price}</p>
         <div>
-          <button onClick={() => handleAddToCart(item)} className='flex mt-4 items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'>
+          <button
+            onClick={() => handleAddToCart(item)}
+            className='flex mt-4 items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'
+          >
             <FaShoppingCart size={20} className='mr-2' /> Add To Cart
           </button>
         </div>

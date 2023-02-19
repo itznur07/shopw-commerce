@@ -1,6 +1,8 @@
 import React from "react";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   decreaseQty,
   increaseQty,
@@ -33,21 +35,35 @@ const Cart = () => {
 // card Items
 
 const CardItem = ({ item }) => {
-
   const dispatch = useDispatch();
 
   const handleIncrese = (itemId) => {
     dispatch(increaseQty(itemId));
+    toast.success(`cart quentity increased!`, {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+    });
   };
 
   const handleDecrese = (itemId, qty) => {
     if (qty > 1) {
       dispatch(decreaseQty(itemId));
+      toast.success(`cart quentity decreased!`, {
+        position: "top-right",
+        autoClose: 500,
+        hideProgressBar: true,
+      });
     }
   };
 
   const handleRemove = (itemId) => {
     dispatch(removeFromCart(itemId));
+    toast.success(`remove from cart!`, {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+    });
   };
 
   return (
@@ -58,9 +74,7 @@ const CardItem = ({ item }) => {
           alt={item.title}
           className='h-24 w-28 object-cover rounded-sm'
         />
-        <h3 className='text-lg font-medium mt-4'>
-          {item.title.slice(0, 20)}
-        </h3>
+        <h3 className='text-lg font-medium mt-4'>{item.title.slice(0, 20)}</h3>
         <p className='text-gray-600 text-md font-medium mt-2'>${item.price}</p>
         <div className='flex items-center mt-4'>
           <button
@@ -92,5 +106,3 @@ const CardItem = ({ item }) => {
 };
 
 export default Cart;
-
-

@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
+
 import Cart from './Components/Cart';
 import Contact from './Components/Contact';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Wish from './Components/Wish';
 import Home from './Pages/Home';
-
 function App() {
   return (
     <>

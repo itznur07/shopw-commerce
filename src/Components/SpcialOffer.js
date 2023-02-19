@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   FaGift,
   FaHeart,
@@ -24,10 +27,21 @@ const SpcialOffer = () => {
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    toast.success(`${product.title} added to cart 🛒!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
+
   };
 
   const handleAddToWish = (product) => {
     dispatch(addToWish(product));
+    toast.success(`${product.title} added to wishlist 😊!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+    });
   };
 
   return (

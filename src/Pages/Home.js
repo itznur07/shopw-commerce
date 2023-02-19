@@ -18,7 +18,7 @@ const Home = () => {
         <Categories />
         <MiniPromotion />
       </section>
-      <section className="bg-white">
+      <section className='bg-white'>
         <ChooseHint />
         <ProductHint />
         <SpcialOffer />
