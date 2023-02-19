@@ -1,8 +1,14 @@
 import React from "react";
 import { FiHeart, FiSearch, FiShoppingCart, FiUser } from "react-icons/fi";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+
+  const {cart} = useSelector((state) => state.products)
+
+  const cartLength = cart.length
+
   return (
     <>
       <div className='bg-blue-500'>
@@ -67,7 +73,7 @@ const Navigation = () => {
               <Link to='/cart' className='inline-block relative ml-4'>
                 <FiShoppingCart className='text-white' size={20} />
                 <span className='absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full'>
-                  2
+                  {cartLength}
                 </span>
               </Link>
             </div>

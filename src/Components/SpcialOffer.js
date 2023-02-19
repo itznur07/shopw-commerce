@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/reducers/productsSlice";
 
 const SpcialOffer = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,24 +22,14 @@ const SpcialOffer = () => {
 
   const { products } = useSelector((state) => state.products);
 
-  const items = products.map((item) => {
-    return item;
-  });
-
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product))
+    dispatch(addToCart(product));
   };
 
   return (
     <>
       <div>
-        <QuickViewModel
-          product={items}
-          isOpen={isOpen}
-          quantity={quantity}
-          setQuantity={setQuantity}
-          onClose={onClose}
-        />
+        {/* quick view */}
         <span className='flex items-center font-bold text-3xl text-slate-800 md:mx-24'>
           <FaGift className='mr-3' />
           Special Offer
@@ -63,9 +53,7 @@ const SpcialOffer = () => {
                 <button className=' hover:text-blue-500 bg-slate-200 px-2 py-2 rounded'>
                   <FaHeart size={20} />
                 </button>
-                <button
-                  className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'
-                >
+                <button className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'>
                   <FaShoppingCart size={20} className='mr-2' /> Add To Cart
                 </button>
                 <button className=' text-gray-500 hover:text-gray-600 bg-slate-200 px-2 py-2 rounded'>
@@ -99,6 +87,13 @@ const SpcialOffer = () => {
                     >
                       Quick view
                     </button>
+                    <QuickViewModel
+                      product={product}
+                      isOpen={isOpen}
+                      quantity={quantity}
+                      setQuantity={setQuantity}
+                      onClose={onClose}
+                    />
                   </div>
                   <div className='bottom-0 left-0 w-full p-4'>
                     <h3 className='text-base font-bold'>{product.title}</h3>
@@ -171,10 +166,10 @@ const QuickViewModel = ({
                 <p className='text-gray-700 text-sm'>
                   Rating: {product.rating}
                 </p>
-                <p className='text-gray-700 text-sm'>Price: ${product.price}</p>
+                <p className='text-gray-700 text-sm'>Price: ${product.discountPrice}</p>
                 {product.discountPrice && (
                   <p className='text-gray-500 line-through text-sm'>
-                    ${product.discountPrice}
+                    ${product.price}
                   </p>
                 )}
               </div>
