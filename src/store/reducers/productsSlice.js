@@ -127,8 +127,12 @@ const productsSlice = createSlice({
     ],
     cart: [],
     wish: [],
+    filterProduct: [],
   },
   reducers: {
+
+    
+
     addToCart: (state, action) => {
       const existingItem = state.cart.find(
         (item) => item.id === action.payload.id
@@ -164,6 +168,7 @@ const productsSlice = createSlice({
         (item) => item.id !== action.payload
       );
     },
+    
   },
 });
 
