@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../Components/Banner";
 import Categories from "../Components/Categories";
 import ChooseHint from "../Components/ChooseHint";
+import Electronices from "../Components/Electornic";
 import MiniPromotion from "../Components/MiniProm";
 import Navigation from "../Components/Navigaion";
 import ProductHint from "../Components/ProductHint";
@@ -25,6 +26,9 @@ const Home = () => {
       </section>
       <section>
         <ProductSort />
+      </section>
+      <section >
+        <Electronices />
       </section>
     </>
   );
