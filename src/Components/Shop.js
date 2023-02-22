@@ -49,7 +49,7 @@ const Shop = () => {
   return (
     <>
       <Navigation />
-      <div className='flex flex-row  md:mx-24 mt-10'>
+      <div className='flex flex-row  md:mx-14 mt-10'>
         {/* Categories Sidebar */}
         <div className='flex flex-col w-1/4 p-4'>
           <h2 className='text-xl uppercase font-bold mb-2'>Categories</h2>

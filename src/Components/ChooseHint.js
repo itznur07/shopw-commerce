@@ -4,7 +4,7 @@ import { FaAmazonPay, FaMoneyBill, FaShippingFast, FaTeamspeak } from "react-ico
 const ChooseHint = () => {
   return (
     <div className='py-10 my-16'>
-      <div className='flex items-center justify-between md:mx-24 '>
+      <div className='flex items-center justify-between md:mx-14 '>
         <ChooseHintCard
           icon={<FaTeamspeak size={32} className='text-gray-500' />}
           title='24/7 Online Supports'

@@ -13,7 +13,7 @@ const Wish = () => {
   return (
     <>
       <Navigaion />
-      <div className='md:mx-28 mt-5'>
+      <div className='md:mx-14 mt-5'>
         <h2 className='text-2xl font-medium mb-6 uppercase'>WishList</h2>
         <div className='flex flex-col justify-center items-center'>
           {wish.map((item) => (

@@ -6,6 +6,8 @@ import {
   FaStarHalfAlt,
   FaTimes
 } from "react-icons/fa";
+// import "react-medium-image-zoom/dist/styles.css";
+
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,7 +43,7 @@ const ProductCard = ({ product }) => {
     <>
       <div
         key={product}
-        className='relative border hover:shadow-lg cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-200'
+        className='relative border hover:shadow-xl cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-100'
       >
         <div className='absolute top-3 left-2  text-white bg-blue-500  px-3 '>
           {product.status}
@@ -71,7 +73,10 @@ const ProductCard = ({ product }) => {
         <div className='bottom-0 left-0 w-full p-4'>
           <h3 className='text-base font-bold'>{product.title}</h3>
           <span className='flex items-center mt-1 text-sm text-yellow-400'>
-            <FaStar /> <FaStar /> <FaStar /> <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
+            <FaStar />
             <FaStarHalfAlt />
           </span>
           <div className='flex justify-between items-center mt-3'>
@@ -96,13 +101,20 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const QuickViewModel = ({product,isOpen,onClose,quantity,setQuantity,}) => {
+const QuickViewModel = ({
+  product,
+  isOpen,
+  onClose,
+  quantity,
+  setQuantity,
+  showProduct,
+}) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product))
-  }
-  
+    dispatch(addToCart(product));
+  };
+
   return (
     <div
       className={`fixed inset-0 z-50 overflow-y-auto ${
@@ -128,6 +140,23 @@ const QuickViewModel = ({product,isOpen,onClose,quantity,setQuantity,}) => {
               alt={product.title}
               className='mx-auto w-full h-96 object-contain'
             />
+            {/* <ImageZoom
+              image={{
+                src: product.image,
+                alt: product.title,
+                className: "img",
+              }}
+              zoomImage={{
+                src:product.image,
+                alt: product.title,
+                className: "img",
+              }}
+              defaultStyles={{
+                overlay: {
+                  backgroundColor: "rgba(0, 0, 0, 0.8)",
+                },
+              }}
+            /> */}
             <h3 className='text-lg font-medium text-gray-900 mt-4'>
               {product.title}
             </h3>
@@ -138,11 +167,12 @@ const QuickViewModel = ({product,isOpen,onClose,quantity,setQuantity,}) => {
                   Rating: {product.rating}
                 </p>
                 <p className='text-gray-700 text-sm'>
-                  Price: ${product.discountPrice}
+                  Discount Price: ${product.discountPrice}
                 </p>
                 {product.discountPrice && (
-                  <p className='text-gray-500 line-through text-sm'>
-                    ${product.price}
+                  <p className='text-gray-500  text-sm'>
+                    Orginal Price:{" "}
+                    <span className='line-through'>${product.price}</span>
                   </p>
                 )}
               </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductHint = () => {
   return (
-    <div className='grid grid-cols-12 gap-4 md:mx-24 mb-16'>
+    <div className='grid grid-cols-12 gap-4 md:mx-14 mb-16'>
       <div className='col-span-4'>
         <div className='relative h-52 rounded-lg overflow-hidden'>
           <img

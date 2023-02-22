@@ -18,11 +18,11 @@ const SpcialOffer = () => {
     <>
       <div>
         {/* quick view */}
-        <span className='flex items-center font-bold text-3xl text-slate-800 md:mx-24'>
+        <span className='flex items-center font-bold text-3xl text-slate-800 md:mx-14'>
           <FaGift className='mr-3' />
           Special Offer
         </span>
-        <div className='grid grid-cols-12 mt-10 mb-10 md:mx-24'>
+        <div className='grid grid-cols-12 mt-10  pb-10 md:mx-14 '>
           {/* 1st section */}
           <div className='col-span-4 h-auto border-blue-500 border-l border-t border-b rounded'>
             <img src='/images/product-6.jpg' alt='main-product' />

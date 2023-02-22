@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import AboutPage from './Components/About';
 
 import Cart from './Components/Cart';
 import Contact from './Components/Contact';
@@ -18,6 +19,7 @@ function App() {
         <Route path='/wishlist' element={<Wish />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </>
   );

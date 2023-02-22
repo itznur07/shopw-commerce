@@ -3,7 +3,7 @@ import React from "react";
 const Categories = () => {
   return (
     <>
-      <div className='md:mx-24 my-16'>
+      <div className='md:mx-14 my-16'>
         <div className='md:grid md:grid-cols-8  grid grid-cols-2 md:space-y-0 items-center'>
           <CateCard
             img='/images/product-1.jpg'

@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const MiniPromotion = () => {
   return (
-    <div className="h-28 bg-white rounded mx-24 my-16 relative">
+    <div className="h-28 bg-white rounded md:mx-14 my-16 relative">
       <Marquee gradient={false} speed={20}>
         <p className="text-gray-100 shadow-sm text-8xl font-bold z-0 uppercase overflow-hidden">
           Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app Download our app

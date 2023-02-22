@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <>
       <div className='bg-blue-500'>
-        <nav className='flex items-center justify-between flex-wrap  p-6 md:mx-24'>
+        <nav className='flex items-center justify-between flex-wrap  p-6 md:mx-14'>
           <div className='flex items-center flex-shrink-0 text-white mr-6'>
             <Link to='/'>
               <p className='text-2xl font-bold uppercase'>Shopw</p>
