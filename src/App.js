@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import AboutPage from './Components/About';
 
 import Cart from './Components/Cart';
+import Checkout from './Components/Checkout';
 import Contact from './Components/Contact';
 import Login from './Components/Login';
 import Shop from './Components/Shop';
@@ -20,6 +21,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<AboutPage />} />
+        <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </>
   );

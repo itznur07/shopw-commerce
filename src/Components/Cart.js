@@ -1,6 +1,7 @@
 import React from "react";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -27,10 +28,12 @@ const Cart = () => {
         <div className='flex justify-end mt-6'>
           <p className='font-semibold text-2xl'>Total: ${totalCost}</p>
         </div>
-        <div className="flex justify-end my-3">
-          <button className=' bg-black text-white py-2 px-4 w-36'>
-            Checkout
-          </button>
+        <div className='flex justify-end my-3'>
+          <Link to='/checkout'>
+            <button className=' bg-black text-white py-2 px-4 w-36'>
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </>
