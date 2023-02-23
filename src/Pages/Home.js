@@ -11,6 +11,7 @@ import SideCart from "../Components/SideCart";
 import SomeProduct from "../Components/SomeProduct";
 import ProductSort from "../Components/SortProduct";
 import SpcialOffer from "../Components/SpcialOffer";
+
 const Home = () => {
   return (
     <>
@@ -34,7 +35,7 @@ const Home = () => {
         <Electronices />
         <SomeProduct />
       </section>
-      <section>
+      <section className='z-50'>
         <SideCart />
       </section>
       <section>

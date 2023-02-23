@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  
   const { cart, wish } = useSelector((state) => state.products);
 
+  /** Get Qty Lenght for Show Frontend */
   const cartLength = cart.length;
   const wishLength = wish.length;
 
@@ -13,11 +15,13 @@ const Navigation = () => {
     <>
       <div className='bg-blue-500'>
         <nav className='flex items-center justify-between flex-wrap  p-6 md:mx-14'>
+          {/* logo here */}
           <div className='flex items-center flex-shrink-0 text-white mr-6'>
             <Link to='/'>
               <p className='text-2xl font-bold uppercase'>Shopw</p>
             </Link>
           </div>
+          {/* search form here */}
           <div className='w-1/3'>
             <form className='bg-white flex items-center rounded-full px-3 py-2'>
               <input
@@ -34,6 +38,7 @@ const Navigation = () => {
               </button>
             </form>
           </div>
+          {/* navigation link here */}
           <div className='flex items-center'>
             <Link
               to='/'
@@ -59,6 +64,7 @@ const Navigation = () => {
             >
               Contact
             </Link>
+            {/* login & cart & wish icon here */}
             <div className='flex items-center ml-9'>
               <Link to='/signup'>
                 {" "}
