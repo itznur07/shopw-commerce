@@ -22,7 +22,6 @@ const Checkout = () => {
             </Link>
             <h2 className='text-2xl font-bold'>Checkout</h2>
           </div>
-          
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           <div>
@@ -55,18 +54,21 @@ const Checkout = () => {
             </div>
             {/* cupon code here */}
             <div className='md:my-5 md:space-y-4'>
-            <input
-              type='text'
-              className='border border-gray-400 outline-none focus:border-blue-500 rounded px-2 py-1.5 w-48'
-              placeholder='Enter coupon code'
-            />
-            <p className='text-gray-700'>
-              <span className="font-bold">Have a coupon?</span>{" "}
-              <a href='# ' className='text-white bg-blue-500 px-5 py-1  font-semibold'>
-                Enter
-              </a>
-            </p>
-          </div>
+              <input
+                type='text'
+                className='border border-gray-400 outline-none focus:border-blue-500 rounded px-2 py-1.5 w-48'
+                placeholder='Enter coupon code'
+              />
+              <p className='text-gray-700'>
+                <span className='font-bold'>Have a coupon?</span>{" "}
+                <a
+                  href='# '
+                  className='text-white bg-blue-500 px-5 py-1  font-semibold'
+                >
+                  Enter
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

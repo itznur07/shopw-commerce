@@ -65,7 +65,7 @@ function Login() {
         </div>
         <div className='my-5 flex justify-center'>
           <button className='bg-blue-500 hover:bg-blue-300 w-full py-3.5 text-xl font-bold text-white rounded'>
-            Sign up
+            Login
           </button>
         </div>
         <div>
