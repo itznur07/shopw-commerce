@@ -6,6 +6,7 @@ import Electronices from "../Components/Electornic";
 import MiniPromotion from "../Components/MiniProm";
 import Navigation from "../Components/Navigaion";
 import ProductHint from "../Components/ProductHint";
+import SideCart from "../Components/SideCart";
 import SomeProduct from "../Components/SomeProduct";
 import ProductSort from "../Components/SortProduct";
 import SpcialOffer from "../Components/SpcialOffer";
@@ -31,6 +32,9 @@ const Home = () => {
       <section>
         <Electronices />
         <SomeProduct />
+      </section>
+      <section>
+        <SideCart />
       </section>
     </>
   );

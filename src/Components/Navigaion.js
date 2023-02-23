@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
+  const { cart, wish } = useSelector((state) => state.products);
 
-  const {cart, wish} = useSelector((state) => state.products)
-
-  const cartLength = cart.length
-  const wishLength = wish.length
+  const cartLength = cart.length;
+  const wishLength = wish.length;
 
   return (
     <>

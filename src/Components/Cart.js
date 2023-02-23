@@ -27,6 +27,11 @@ const Cart = () => {
         <div className='flex justify-end mt-6'>
           <p className='font-semibold text-2xl'>Total: ${totalCost}</p>
         </div>
+        <div className="flex justify-end my-3">
+          <button className=' bg-black text-white py-2 px-4 w-36'>
+            Checkout
+          </button>
+        </div>
       </div>
     </>
   );
