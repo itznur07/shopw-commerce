@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToCart, addToWish } from "../store/reducers/productsSlice";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, settings }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
@@ -41,62 +41,64 @@ const ProductCard = ({ product }) => {
 
   return (
     <>
-      <div
-        key={product}
-        className='relative border hover:shadow-xl cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-100'
-      >
-        <div className='absolute top-3 left-2  text-white bg-blue-500  px-3 '>
-          {product.status}
-        </div>
-        <button
-          onClick={() => handleAddToCart(product)}
-          className='hidden group-hover:block bg-white hover:bg-blue-500 p-2 hover:text-white rounded-full absolute top-3 right-2 z-10 '
-        >
-          <FaShoppingCart size={20} />
-        </button>
-        <img src={product.image} alt={product.title} className='w-full' />
-        <div className='flex justify-center'>
-          <button
-            onClick={() => setIsOpen(true)}
-            className='bg-blue-500 hover:bg-orange-500 absolute top-44 text-white px-7 py-2 hidden group-hover:block group-hover:transition-all ease-linear duration-200'
+    
+          <div
+            key={product}
+            className='relative border hover:shadow-xl cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-100'
           >
-            Quick view
-          </button>
-          <QuickViewModel
-            product={product}
-            isOpen={isOpen}
-            //   quantity={quantity}
-            //   setQuantity={setQuantity}
-            onClose={onClose}
-          />
-        </div>
-        <div className='bottom-0 left-0 w-full p-4'>
-          <h3 className='text-base font-bold'>{product.title}</h3>
-          <span className='flex items-center mt-1 text-sm text-yellow-400'>
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStarHalfAlt />
-          </span>
-          <div className='flex justify-between items-center mt-3'>
-            <div className='space-x-2'>
-              <span className='text-base text-gray-400 line-through'>
-                ${product.price}
-              </span>
-              <span className='text-base font-bold text-yellow-600'>
-                ${product.discountPrice}
-              </span>
+            <div className='absolute top-3 left-2  text-white bg-blue-500  px-3 '>
+              {product.status}
             </div>
             <button
-              onClick={() => handleAddToWish(product)}
-              className='text-gray-700 hover:text-red-500'
+              onClick={() => handleAddToCart(product)}
+              className='hidden group-hover:block bg-white hover:bg-blue-500 p-2 hover:text-white rounded-full absolute top-3 right-2 z-10 '
             >
-              <FaHeart size={20} />
+              <FaShoppingCart size={20} />
             </button>
+            <img src={product.image} alt={product.title} className='w-full' />
+            <div className='flex justify-center'>
+              <button
+                onClick={() => setIsOpen(true)}
+                className='bg-blue-500 hover:bg-orange-500 absolute top-44 text-white px-7 py-2 hidden group-hover:block group-hover:transition-all ease-linear duration-200'
+              >
+                Quick view
+              </button>
+              <QuickViewModel
+                product={product}
+                isOpen={isOpen}
+                //   quantity={quantity}
+                //   setQuantity={setQuantity}
+                onClose={onClose}
+              />
+            </div>
+            <div className='bottom-0 left-0 w-full p-4'>
+              <h3 className='text-base font-bold'>{product.title}</h3>
+              <span className='flex items-center mt-1 text-sm text-yellow-400'>
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+              </span>
+              <div className='flex justify-between items-center mt-3'>
+                <div className='space-x-2'>
+                  <span className='text-base text-gray-400 line-through'>
+                    ${product.price}
+                  </span>
+                  <span className='text-base font-bold text-yellow-600'>
+                    ${product.discountPrice}
+                  </span>
+                </div>
+                <button
+                  onClick={() => handleAddToWish(product)}
+                  className='text-gray-700 hover:text-red-500'
+                >
+                  <FaHeart size={20} />
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+
     </>
   );
 };
