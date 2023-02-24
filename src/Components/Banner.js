@@ -40,7 +40,7 @@ const Banner = () => {
         </div>
         <div className='relative h-96 '>
           <img
-            src={imgSrc[3]}
+            src={imgSrc[2]}
             alt='Banner 3'
             className='w-full h-full object-cover'
           />

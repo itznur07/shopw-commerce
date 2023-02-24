@@ -1,6 +1,4 @@
 import React from "react";
-import "react-toastify/dist/ReactToastify.css";
-
 import {
   FaGift,
   FaHeart,
@@ -10,10 +8,13 @@ import {
   FaStarHalfAlt
 } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
 import ProductCard from "./ProductCard";
 
 const SpcialOffer = () => {
+
   const { products } = useSelector((state) => state.products);
+  
   return (
     <>
       <div>
