@@ -68,7 +68,7 @@ const Navigation = () => {
             <div className='flex items-center ml-9'>
               <Link to='/signup'>
                 {" "}
-                <FiUser className='text-black cursor-pointer' size={25} />
+                <FiUser className='text-black cursor-pointer animate-pulse' size={25} />
               </Link>
               <Link to='/wishlist' className='inline-block relative ml-4'>
                 <FiHeart className='text-black' size={20} />
