@@ -16,9 +16,9 @@ const Banner = () => {
   };
 
   const imgSrc = [
-    "https://img.freepik.com/free-vector/mega-sale-banner-your-online-store-realistic-style-with-phone-map-cart-bag-gift-vector-illustration_548887-132.jpg?w=1380&t=st=1676479723~exp=1676480323~hmac=ecba5178eb8b0b472cd209bc70ad1e127433e9ced5f64cfacc3df38a8f4813e5",
-    "https://img.freepik.com/free-vector/mega-sale-banner-your-online-store-realistic-style-with-phone-map-cart-bag-gift-vector-illustration_548887-132.jpg?w=1380&t=st=1676479723~exp=1676480323~hmac=ecba5178eb8b0b472cd209bc70ad1e127433e9ced5f64cfacc3df38a8f4813e5",
-    "https://img.freepik.com/free-vector/mega-sale-banner-your-online-store-realistic-style-with-phone-map-cart-bag-gift-vector-illustration_548887-132.jpg?w=1380&t=st=1676479723~exp=1676480323~hmac=ecba5178eb8b0b472cd209bc70ad1e127433e9ced5f64cfacc3df38a8f4813e5",
+    "/images/shop1_shop_banner.jpg",
+    "/images/shop36_home_banner9.jpg",
+    "/images/shop36_home_banner2.jpg",
   ];
 
   return (
@@ -30,6 +30,19 @@ const Banner = () => {
             alt='Banner 1'
             className='w-full h-full object-cover '
           />
+          <div className='absolute top-28 left-36'>
+            <div className='font-bold uppercase'>
+              <span className='text-5xl'>ELECTRONIC</span> <br />
+              <span className='text-5xl'>DEALS</span>
+              <br />
+              <button className="mt-4 uppercase bg-black px-5 py-2.5 rounded text-white">Get yours!</button>
+            </div>
+          </div>
+          <div className='absolute top-32 left-2/4' >
+            <span className="text-md bg-white text-semibold px-5 py-2 font-semibold">Exclusive COUPON</span><br /><br />
+            <span className="text-xl  bg-white text-semibold px-5 py-2 font-bold">$100</span>
+            <span className="text-xl uppercase text-semibold ml-2 font-bold">off</span>
+          </div>
         </div>
         <div className='relative h-96'>
           <img
@@ -37,6 +50,19 @@ const Banner = () => {
             alt='Banner 2'
             className='w-full h-full object-cover '
           />
+          <div className='absolute top-28 left-36'>
+            <div className='font-bold uppercase'>
+              <span className='text-5xl'>Best Forien</span> <br />
+              <span className='text-5xl'>Sofa</span>
+              <br />
+              <button className="mt-4 uppercase bg-black px-5 py-2.5 rounded text-white">Get yours!</button>
+            </div>
+          </div>
+          <div className='absolute top-32 right-56' >
+            <span className="text-md bg-white text-semibold px-5 py-2 font-semibold">Exclusive COUPON</span><br /><br />
+            <span className="text-xl  bg-white text-semibold px-5 py-2 font-bold">$500</span>
+            <span className="text-xl uppercase text-semibold ml-2 font-bold">off</span>
+          </div>
         </div>
         <div className='relative h-96 '>
           <img
@@ -44,6 +70,19 @@ const Banner = () => {
             alt='Banner 3'
             className='w-full h-full object-cover'
           />
+          <div className='absolute top-28 left-36'>
+            <div className='font-bold uppercase'>
+              <span className='text-5xl'>Drone Pro</span> <br />
+              <span className='text-5xl'>Sales</span>
+              <br />
+              <button className="mt-4 uppercase  bg-black px-5 py-2.5 rounded text-white">Get yours!</button>
+            </div>
+          </div>
+          <div className='absolute top-32 right-56' >
+            <span className="text-md bg-black text-white text-semibold px-5 py-2 font-semibold">Exclusive COUPON</span><br /><br />
+            <span className="text-xl  bg-black text-white text-semibold px-5 py-2 font-bold">$400</span>
+            <span className="text-xl uppercase text-semibold ml-2 font-bold">off</span>
+          </div>
         </div>
       </Slider>
     </>
