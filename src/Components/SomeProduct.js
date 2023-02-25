@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import ProductCard from "./ProductCard";
 
 const SomeProduct = () => {
-
   const settings = {
     dots: false,
     infinite: true,
@@ -21,12 +20,12 @@ const SomeProduct = () => {
 
   return (
     <>
-      <div className='md:mx-14 md:my-10'>
+      <div className='md:mx-14 md:my-10 '>
         <div className='col-span-12 border'>
-          {/* 2nd section */}
+          {/* some section */}
           <Slider {...settings} className='grid grid-cols-6'>
             {products.slice(0, 8).map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} offQuick={true}/>
             ))}
           </Slider>
         </div>

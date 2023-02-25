@@ -40,7 +40,7 @@ const SelectedProduct = () => {
             {/* 2nd section */}
             <Slider {...settings} className='grid grid-cols-6'>
               {products.slice(0, 8).map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} offQuick={true} />
               ))}
             </Slider>
           </div>
