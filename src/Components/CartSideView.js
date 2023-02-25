@@ -1,6 +1,7 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { removeFromCart } from "../store/reducers/productsSlice";
 
 const ProductCartSidebar = ({ isOpen, onClose }) => {
@@ -58,9 +59,14 @@ const ProductCartSidebar = ({ isOpen, onClose }) => {
           <p>Subtotal:</p>
           <p className='font-semibold'>${total}</p>
         </div>
-        <button className='bg-black text-white py-2 px-4 w-full'>
-          Checkout
-        </button>
+
+        {cart.length === 0 ? null : (
+          <Link to='/checkout'>
+            <button className='bg-black text-white py-2 px-4 w-full'>
+              Checkout
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

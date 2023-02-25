@@ -29,11 +29,13 @@ const Cart = () => {
           <p className='font-semibold text-2xl'>Total: ${totalCost}</p>
         </div>
         <div className='flex justify-end my-3'>
-          <Link to='/checkout'>
-            <button className=' bg-black text-white py-2 px-4 w-36'>
-              Checkout
-            </button>
-          </Link>
+          {cart.length === 0 ? null : (
+            <Link to='/checkout'>
+              <button className=' bg-black text-white py-2 px-4 w-36'>
+                Checkout
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </>
