@@ -9,6 +9,7 @@ import GiftSale from "../Components/GiftSales";
 import MiniPromotion from "../Components/MiniProm";
 import Navigation from "../Components/Navigaion";
 import ProductHint from "../Components/ProductHint";
+import SelectedProduct from "../Components/SelectedProduct";
 import SideCart from "../Components/SideCart";
 import SomeProduct from "../Components/SomeProduct";
 import ProductSort from "../Components/SortProduct";
@@ -44,6 +45,9 @@ const Home = () => {
       </section>
       <section>
         <FeaturesBrandSection />
+      </section>
+      <section>
+        <SelectedProduct />
       </section>
       <section className='z-50'>
         <SideCart />

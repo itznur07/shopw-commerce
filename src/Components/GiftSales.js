@@ -14,7 +14,7 @@ const GiftSale = () => {
         <div>
           {" "}
           <h2 className='text-white text-3xl leading-tight font-bold'>
-            THE PERFECT GIFT FOR YOUR GIRLFRIEND
+            THE PERFECT GIFT FOR YOUR FAMILY
           </h2>
           <p className='text-white text-5xl mt-3 font-bold'>
             GIFT SELECTION ON SALE
