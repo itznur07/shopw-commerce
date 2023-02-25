@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import Categories from "../Components/Categories";
 import ChooseHint from "../Components/ChooseHint";
 import Electronices from "../Components/Electornic";
+import FeaturesBrandSection from "../Components/FeaturesBrand";
 import GiftGaget from "../Components/GIftGaget";
 import GiftSale from "../Components/GiftSales";
 import MiniPromotion from "../Components/MiniProm";
@@ -40,6 +41,9 @@ const Home = () => {
       <section>
         <GiftGaget />
         <GiftSale />
+      </section>
+      <section>
+        <FeaturesBrandSection />
       </section>
       <section className='z-50'>
         <SideCart />

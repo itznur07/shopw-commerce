@@ -16,10 +16,12 @@ const GiftSale = () => {
           <h2 className='text-white text-3xl leading-tight font-bold'>
             THE PERFECT GIFT FOR YOUR GIRLFRIEND
           </h2>
-          <p className='text-white text-5xl mt-3 font-bold'>GIFT SELECTION ON SALE</p>
+          <p className='text-white text-5xl mt-3 font-bold'>
+            GIFT SELECTION ON SALE
+          </p>
         </div>
-        <div className="text-9xl font-bold text-white ">
-            50%
+        <div className='text-9xl font-bold text-white '>
+          50% <span className='text-sm uppercase'>off</span>
         </div>
         <button className='px-8 py-3 bg-white text-black font-bold mt-8 rounded-lg hover:bg-slate-200 transition duration-200'>
           Shop Now
