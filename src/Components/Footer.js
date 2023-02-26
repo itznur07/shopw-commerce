@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaHeart, FaInstagram, FaTwitter } from "react-icons/fa";
 import Newsletter from "./Newsletter";
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='md:mx-14'>
       <Newsletter />
       <footer className='bg-gray-100 py-8'>
-        <div className='container mx-auto px-4'>
+        <div className='container mx-auto '>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
             {/* CUSTOMER SERVICE */}
             <div>
@@ -93,6 +93,19 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <div className="container mx-auto flex flex-wrap justify-between items-center mt-4">
+        <div className="text-center md:text-left">
+          <p>&copy; 2023 Your Company. All rights reserved.</p>
+          <p>Built with <FaHeart className="inline text-red-500" /> by itznur07</p>
+        </div>
+        <div className="text-center md:text-right mt-4 md:mt-0">
+          <ul className="flex justify-center md:justify-end">
+            <li className="mx-3"><a href="# " className="hover:text-black">Terms</a></li>
+            <li className="mx-3"><a href="# " className="hover:text-black">Privacy</a></li>
+            <li className="mx-3"><a href="# " className="hover:text-black">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
