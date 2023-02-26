@@ -4,6 +4,7 @@ import Categories from "../Components/Categories";
 import ChooseHint from "../Components/ChooseHint";
 import Electronices from "../Components/Electornic";
 import FeaturesBrandSection from "../Components/FeaturesBrand";
+import Footer from "../Components/Footer";
 import GiftGaget from "../Components/GIftGaget";
 import GiftSale from "../Components/GiftSales";
 import MiniPromotion from "../Components/MiniProm";
@@ -55,6 +56,9 @@ const Home = () => {
       </section>
       <section>
         <RecentViewProduct />
+      </section>
+      <section>
+        <Footer />
       </section>
       <section className='z-50'>
         <SideCart />
