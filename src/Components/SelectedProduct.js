@@ -14,7 +14,7 @@ const SelectedProduct = () => {
     slidesToShow: 6,
     slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 3000,
   };
 
   const { products } = useSelector((state) => state.products);

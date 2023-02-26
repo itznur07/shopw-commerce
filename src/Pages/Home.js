@@ -10,6 +10,7 @@ import MiniPromotion from "../Components/MiniProm";
 import Navigation from "../Components/Navigaion";
 import OtBanner from "../Components/OtBanner";
 import ProductHint from "../Components/ProductHint";
+import RecentViewProduct from "../Components/RecentViewProduct";
 import SelectedProduct from "../Components/SelectedProduct";
 import SideCart from "../Components/SideCart";
 import SomeProduct from "../Components/SomeProduct";
@@ -51,6 +52,9 @@ const Home = () => {
       </section>
       <section>
         <OtBanner />
+      </section>
+      <section>
+        <RecentViewProduct />
       </section>
       <section className='z-50'>
         <SideCart />
