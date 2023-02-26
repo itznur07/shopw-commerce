@@ -4,7 +4,7 @@ import { FiMail, FiSend } from "react-icons/fi";
 const Newsletter = () => {
   return (
     <div className='bg-gray-100 py-10  sm:px-6 lg:py-16 lg:px-8'>
-      <div className='max-w-7xl mx-auto'>
+
         <div className='md:flex md:items-center md:justify-between'>
           <div className='mb-4 md:mb-0'>
             <h3 className='text-3xl  font-bold text-gray-800'>
@@ -33,7 +33,6 @@ const Newsletter = () => {
             </button>
           </div>
         </div>
-      </div>
     </div>
   );
 };
