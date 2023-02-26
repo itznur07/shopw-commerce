@@ -12,6 +12,7 @@ import Navigation from "../Components/Navigaion";
 import OtBanner from "../Components/OtBanner";
 import ProductHint from "../Components/ProductHint";
 import RecentViewProduct from "../Components/RecentViewProduct";
+import ScrollToTopButton from "../Components/ScrollToTop";
 import SelectedProduct from "../Components/SelectedProduct";
 import SideCart from "../Components/SideCart";
 import SomeProduct from "../Components/SomeProduct";
@@ -62,6 +63,9 @@ const Home = () => {
       </section>
       <section className='z-50'>
         <SideCart />
+      </section>
+      <section>
+        <ScrollToTopButton />
       </section>
     </>
   );
