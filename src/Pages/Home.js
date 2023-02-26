@@ -8,6 +8,7 @@ import GiftGaget from "../Components/GIftGaget";
 import GiftSale from "../Components/GiftSales";
 import MiniPromotion from "../Components/MiniProm";
 import Navigation from "../Components/Navigaion";
+import OtBanner from "../Components/OtBanner";
 import ProductHint from "../Components/ProductHint";
 import SelectedProduct from "../Components/SelectedProduct";
 import SideCart from "../Components/SideCart";
@@ -38,7 +39,6 @@ const Home = () => {
         <Electronices />
         <SomeProduct />
       </section>
-      
       <section>
         <GiftGaget />
         <GiftSale />
@@ -48,6 +48,9 @@ const Home = () => {
       </section>
       <section>
         <SelectedProduct />
+      </section>
+      <section>
+        <OtBanner />
       </section>
       <section className='z-50'>
         <SideCart />
