@@ -2,6 +2,7 @@ import React from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { FaList, FaTh } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import Footer from "./Footer";
 import Navigation from "./Navigaion";
 import ProductCard from "./ProductCard";
 
@@ -209,6 +210,8 @@ const Shop = () => {
           </div>
         </div>
       </div>
+
+      <Footer/>
     </>
   );
 };
