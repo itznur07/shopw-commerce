@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 import HappyClient from "./HappyClient";
 import Navigation from "./Navigaion";
 import WhyChooseUs from "./WhyChooseUs";
@@ -53,6 +54,7 @@ const AboutPage = () => {
       <div className="md:mx-20">
         <HappyClient />
       </div>
+      <Footer />
     </>
   );
 };
