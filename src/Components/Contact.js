@@ -1,6 +1,7 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Footer from "./Footer";
 import Navigaion from "./Navigaion";
 
 const Contact = () => {
@@ -145,6 +146,8 @@ const Contact = () => {
           {/* map placement ends here */}
         </div>
       </div>
+
+      <Footer/>
     </>
   );
 };
