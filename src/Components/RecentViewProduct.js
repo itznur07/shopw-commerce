@@ -24,7 +24,7 @@ const RecentViewProduct = () => {
         <h1 className="text-3xl font-bold uppercase">Recently View Products</h1>
         <div className='col-span-12 border mt-5'>
           {/* recent view section */}
-          <Slider {...settings} className='grid grid-cols-6'>
+          <Slider {...settings} className='grid grid-cols-1'>
             {products.slice(0, 8).map((product) => (
               <ProductCard key={product.id} product={product} offQuick={true}/>
             ))}

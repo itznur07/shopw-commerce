@@ -32,15 +32,21 @@ const SelectedProduct = () => {
               <li>Best Ratings</li>
             </ul>
           </div>
-          <Link className="text-blue-500 hover:text-blue-700" to='/shop'>View all &#x2192;</Link>
+          <Link className='text-blue-500 hover:text-blue-700' to='/shop'>
+            View all &#x2192;
+          </Link>
         </div>
         {/* nav here */}
         <div>
           <div className='col-span-12 border'>
             {/* 2nd section */}
-            <Slider {...settings} className='grid grid-cols-6'>
+            <Slider {...settings} className='grid grid-cols-1'>
               {products.slice(0, 8).map((product) => (
-                <ProductCard key={product.id} product={product} offQuick={true} />
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  offQuick={true}
+                />
               ))}
             </Slider>
           </div>
