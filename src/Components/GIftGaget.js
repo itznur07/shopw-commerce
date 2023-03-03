@@ -9,7 +9,7 @@ const GiftGaget = () => {
     <>
       <div className='md:mx-14 md:my-10'>
         <div className='col-span-12 border'>
-          <div className='grid grid-cols-1'>
+          <div className='grid grid-cols-6'>
             {products.slice(0, 6).map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

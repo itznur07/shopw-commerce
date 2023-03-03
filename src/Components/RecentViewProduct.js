@@ -21,12 +21,12 @@ const RecentViewProduct = () => {
   return (
     <>
       <div className='md:mx-14 md:my-14 '>
-        <h1 className="text-3xl font-bold uppercase">Recently View Products</h1>
+        <h1 className='text-3xl font-bold uppercase'>Recently View Products</h1>
         <div className='col-span-12 border mt-5'>
           {/* recent view section */}
-          <Slider {...settings} className='grid grid-cols-1'>
+          <Slider {...settings} className='grid grid-cols-6'>
             {products.slice(0, 8).map((product) => (
-              <ProductCard key={product.id} product={product} offQuick={true}/>
+              <ProductCard key={product.id} product={product} offQuick={true} />
             ))}
           </Slider>
         </div>

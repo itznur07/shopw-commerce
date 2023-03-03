@@ -40,7 +40,7 @@ const SelectedProduct = () => {
         <div>
           <div className='col-span-12 border'>
             {/* 2nd section */}
-            <Slider {...settings} className='grid grid-cols-1'>
+            <Slider {...settings} className='grid grid-cols-6'>
               {products.slice(0, 8).map((product) => (
                 <ProductCard
                   key={product.id}
