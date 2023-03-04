@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Slider from 'react-slick';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import ProductCard from "./ProductCard";
@@ -39,13 +40,14 @@ const SelectedProduct = () => {
         <div>
           <div className=' border'>
             {/* 2nd section */}
-            {/* <Slider {...settings}> */}
-              <div className='grid grid-cols-6 gap-4'>
+
+            <div className='grid grid-cols-1 gap-4'>
+              <Slider {...settings}>
                 {products.slice(0, 8).map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
-              </div>
-            {/* </Slider> */}
+              </Slider>
+            </div>
           </div>
         </div>
       </div>
