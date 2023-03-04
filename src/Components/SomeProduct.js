@@ -21,14 +21,13 @@ const SomeProduct = () => {
   return (
     <>
       <div className='md:mx-14 md:my-10 '>
-        <div className='col-span-12 border'>
-          {/* some section */}
-          <Slider {...settings} className='grid grid-cols-6'>
-            {products.slice(0, 8).map((product) => (
-              <ProductCard key={product.id} product={product} offQuick={true}/>
-            ))}
-          </Slider>
-        </div>
+      <div className='grid grid-cols-1 gap-4'>
+              <Slider {...settings}>
+                {products.slice(0, 8).map((product) => (
+                  <ProductCard key={product.id} product={product} offQuick={true} />
+                ))}
+              </Slider>
+            </div>
       </div>
     </>
   );
