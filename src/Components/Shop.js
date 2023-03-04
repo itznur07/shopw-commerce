@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { FaList, FaTh } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -13,39 +13,15 @@ import ProductCard from "./ProductCard";
 const Shop = () => {
   // const dispatch = useDispatch();
 
+  const [view, setView] = useState(4);
+
   const { products } = useSelector((state) => state.products);
-  //   const filteredProducts = useSelector(selectFilteredProducts);
-  //   const sortOption = useSelector(selectSortOption);
-  //   const pageNumber = useSelector(selectPageNumber);
-  // const productsPerPage = 12;
 
-  //   const handleSortChange = (e) => {
-  //     dispatch(setSortOption(e.target.value));
-  //   };
+  const listView = () => {
+    setView(3);
+  };
 
-  //   const handlePageChange = (page) => {
-  //     dispatch(setPageNumber(page));
-  //   };
-
-  //   const sortedProducts = filteredProducts.sort((a, b) => {
-  //     switch (sortOption) {
-  //       case "price_asc":
-  //         return a.price - b.price;
-  //       case "price_desc":
-  //         return b.price - a.price;
-  //       case "name_asc":
-  //         return a.name.localeCompare(b.name);
-  //       case "name_desc":
-  //         return b.name.localeCompare(a.name);
-  //       default:
-  //         return 0;
-  //     }
-  //   });
-
-  //   const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
-  //   const startIndex = (pageNumber - 1) * productsPerPage;
-  //   const endIndex = startIndex + productsPerPage;
-  //   const currentProducts = sortedProducts.slice(startIndex, endIndex);
+ 
 
   return (
     <>
@@ -57,91 +33,61 @@ const Shop = () => {
 
           <ul className='list-none md:space-y-5 text-md font-medium text-slate-600 my-6'>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Cemeras
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Electronics
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Fashion
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Furniture
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Gaming
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
+              <a href='# ' className=''>
                 Gifts & Gadgets
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
-               Headphones
+              <a href='# ' className=''>
+                Headphones
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
-               Home & Garden
+              <a href='# ' className=''>
+                Home & Garden
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
-              Smartphones
+              <a href='# ' className=''>
+                Smartphones
               </a>
             </li>
             <li>
-              <a
-                href='# '
-                className=''
-              >
-              Sports
+              <a href='# ' className=''>
+                Sports
               </a>
             </li>
           </ul>
 
           {/* Dropdowns or Filter Ranges here */}
-          <h1 className="text-xl font-semibold">Filter</h1>
-          <span className="text-sm font-medium mt-5">Price</span>
-          <input type='range' name='' id='' className="mt-2" />
+          <h1 className='text-xl font-semibold'>Filter</h1>
+          <span className='text-sm font-medium mt-5'>Price</span>
+          <input type='range' name='' id='' className='mt-2' />
           {/* ... */}
         </div>
 
@@ -165,7 +111,7 @@ const Shop = () => {
 
             {/* View Options */}
             <div className='flex flex-row items-center md:space-x-4'>
-              <button className='text-blue-500'>
+              <button onClick={()=>listView()} className='text-blue-500'>
                 <FaTh size={22} />
               </button>
               <button className='text-blue-500'>
@@ -175,7 +121,7 @@ const Shop = () => {
           </div>
 
           {/* Product Cards */}
-          <div className='grid grid-cols-3 gap-4'>
+          <div className={`grid grid-cols-${view} gap-4`}>
             {products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -211,7 +157,7 @@ const Shop = () => {
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };
