@@ -141,23 +141,6 @@ const QuickViewModel = ({
               alt={product.title}
               className='mx-auto w-full h-96 object-contain'
             />
-            {/* <ImageZoom
-              image={{
-                src: product.image,
-                alt: product.title,
-                className: "img",
-              }}
-              zoomImage={{
-                src:product.image,
-                alt: product.title,
-                className: "img",
-              }}
-              defaultStyles={{
-                overlay: {
-                  backgroundColor: "rgba(0, 0, 0, 0.8)",
-                },
-              }}
-            /> */}
             <h3 className='text-lg font-medium text-gray-900 mt-4'>
               {product.title}
             </h3>
