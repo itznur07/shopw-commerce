@@ -5,6 +5,7 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 import Contact from './Components/Contact';
 import Login from './Components/Login';
+import ProductDetailsPage from './Components/ProductDetailsPage';
 import Shop from './Components/Shop';
 import Signup from './Components/Signup';
 import Wish from './Components/Wish';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/products/:id' element={<ProductDetailsPage />} />
       </Routes>
     </>
   );
