@@ -37,16 +37,17 @@ const ProductCard = ({ product, offQuick }) => {
   const onClose = () => {
     setIsOpen(false);
   };
-// some changes
+
+  // some changes
 
   return (
     <>
-      <Link to={`${product.id}`}>
+      
         <div
           key={product}
           className='relative border hover:shadow-xl cursor-pointer group group-hover:transition-all ease-linear duration-200 delay-100'
         >
-          <div className='absolute top-3 left-2  text-white bg-blue-500  px-3 '>
+          <div className='absolute top-3 left-2 text-white bg-blue-500 px-3'>
             {product.status}
           </div>
           <button
@@ -55,7 +56,7 @@ const ProductCard = ({ product, offQuick }) => {
           >
             <FaShoppingCart size={20} />
           </button>
-          <img src={product.image} alt={product.title} className='w-full' />
+          <Link to={`${product.id}`}><img src={product.image} alt={product.title}className='w-full' /></Link> 
           {offQuick ? null : (
             <div className='flex justify-center'>
               <button
@@ -73,8 +74,9 @@ const ProductCard = ({ product, offQuick }) => {
               />
             </div>
           )}
+          
           <div className='bottom-0 left-0 w-full p-4'>
-            <h3 className='text-base font-bold'>{product.title}</h3>
+          <Link to={`${product.id}`}><h3 className='text-base font-bold'>{product.title}</h3></Link>
             <span className='flex items-center mt-1 text-sm text-yellow-400'>
               <FaStar />
               <FaStar />
@@ -84,12 +86,14 @@ const ProductCard = ({ product, offQuick }) => {
             </span>
             <div className='flex justify-between items-center mt-3'>
               <div className='space-x-2'>
+              <Link to={`${product.id}`}>
                 <span className='text-base text-gray-400 line-through'>
                   ${product.price}
                 </span>
                 <span className='text-base font-bold text-yellow-600'>
                   ${product.discountPrice}
                 </span>
+                </Link>
               </div>
               <button
                 onClick={() => handleAddToWish(product)}
@@ -100,7 +104,6 @@ const ProductCard = ({ product, offQuick }) => {
             </div>
           </div>
         </div>
-      </Link>
     </>
   );
 };

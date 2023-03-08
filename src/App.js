@@ -11,6 +11,7 @@ import Signup from './Components/Signup';
 import Wish from './Components/Wish';
 import Home from './Pages/Home';
 function App() {
+
   return (
     <>
       <Routes>
@@ -23,7 +24,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/checkout' element={<Checkout />} />
-        <Route path='/products/:id' element={<ProductDetailsPage />} />
+        <Route path='/:id' element={<ProductDetailsPage />} />
       </Routes>
     </>
   );
