@@ -1,7 +1,8 @@
 import React from "react";
 import { FaRegHeart, FaShareAlt } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addToCart } from "../store/reducers/productsSlice";
 import Footer from "./Footer";
 import Navigation from "./Navigaion";
 
@@ -10,10 +11,19 @@ const ProductDetailsPage = () => {
   const realid = id - 1;
   const { products } = useSelector((state) => state.products);
 
+  const product = products.map((product) => product.id);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (productItem) => {
+    dispatch(addToCart(productItem));
+  };
+
   return (
     <>
       <Navigation />
       <div className='flex items-center flex-wrap mt-8'>
+        {/* image */}
         <div className='w-full md:w-1/2 p-4'>
           <div className='flex justify-center'>
             <div className='relative'>
@@ -22,10 +32,10 @@ const ProductDetailsPage = () => {
                 alt='Product'
                 className='max-w-full h-auto'
               />
-              
             </div>
           </div>
         </div>
+        {/* details */}
         <div className='w-full md:w-1/2 p-4'>
           <h2 className='text-3xl font-semibold mb-4'>
             {products[realid].title}
@@ -46,7 +56,9 @@ const ProductDetailsPage = () => {
           </div>
           <p className='text-gray-600 mb-4'>{products[realid].desc}</p>
           <div className='flex items-center mb-4'>
-            <span className='mr-2 font-semibold text-md uppercase'>Quantity:</span>
+            <span className='mr-2 font-semibold text-md uppercase'>
+              Quantity:
+            </span>
             <button className='bg-black text-white py-1 px-2 hover:bg-gray-800'>
               -
             </button>
@@ -55,7 +67,12 @@ const ProductDetailsPage = () => {
               +
             </button>
           </div>
-          <button className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'>Add to cart</button>
+          <button
+            onClick={() => handleAddToCart(product)}
+            className='flex items-center bg-blue-500 text-white text-md font-semibold px-4 py-2 rounded uppercase'
+          >
+            Add to cart
+          </button>
           <div className='flex items-center mt-4'>
             <span className='text-gray-500 mr-4'>Share:</span>
             <FaShareAlt className='text-gray-500 hover:text-gray-600 cursor-pointer mr-2' />
